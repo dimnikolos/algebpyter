@@ -7,7 +7,7 @@
 
 ## 🚀 Δοκίμασέ το τώρα
 
-➡️ **https://dimnikolos.github.io/algepyter**
+➡️ **https://dimnikolos.github.io/algebpyter**
 
 Κάνε κλικ στο παραπάνω link, επέλεξε ένα notebook και πάτα **Run → Run All Cells** για να ξεκινήσεις!
 
