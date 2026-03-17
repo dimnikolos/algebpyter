@@ -50,6 +50,7 @@ def clean_code_lines(lines):
         return lines
 
 def process_tex(filepath, out_filepath):
+    print(f"Processing {filepath} to {out_filepath}")
     cells = []
     current_md = []
     
