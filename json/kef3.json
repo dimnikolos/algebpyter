@@ -1,0 +1,92 @@
+[
+    {
+        "problem": "Ένα βράδυ τρεις φίλοι αγοράζουν μια πίτσα και την χωρίζουν σε οκτώ κομμάτια. Ο ένας έφαγε το 1, ο δεύτερος τα 3 και ο τρίτος 2 κομμάτια. Τι μέρος της πίτσας περίσσεψε;",
+        "math_solution": "Μαζί έφαγαν 1+3+2=6 κομμάτια, δηλαδή τα 6/8 της πίτσας. Περίσσεψαν 8-6=2 κομμάτια, άρα τα 2/8 (που απλοποιείται σε 1/4) της πίτσας.",
+        "python_solution": "from fractions import Fraction\n1 - Fraction(1,8) - Fraction(3,8) - Fraction(2,8)",
+        "notes": "Η βιβλιοθήκη `fractions` και η κλάση `Fraction` επιτρέπουν ακριβείς υπολογισμούς με κλάσματα. Το αποτέλεσμα απλοποιείται αυτόματα σε Fraction(1, 4).",
+        "subject": "fractions_intro",
+        "mathematical_difficulty": 1,
+        "programming_difficulty": 2
+    },
+    {
+        "problem": "Μια σοκολάτα ζυγίζει 120 gr και έχει 6 ίσα κομμάτια. Πόσα κομμάτια πρέπει να κόψουμε για να πάρουμε 40 gr;",
+        "math_solution": "Κάθε κομμάτι είναι το 1/6 της σοκολάτας, άρα ζυγίζει 120 / 6 = 20 gr. Για να πάρουμε 40 gr χρειαζόμαστε 40 / 20 = 2 κομμάτια.",
+        "python_solution": "sok = Fraction(1,6)\nbaros_kommatiou = sok * 120\nkommatia = 40 / baros_kommatiou",
+        "notes": "Ο πολλαπλασιασμός ενός κλάσματος με έναν ακέραιο επιστρέφει το αντίστοιχο βάρος με ακρίβεια.",
+        "subject": "fractions_quantities",
+        "mathematical_difficulty": 2,
+        "programming_difficulty": 1
+    },
+    {
+        "problem": "Ένα κατάστημα κάνει έκπτωση στα είδη του ίση με τα 2/5 της αρχικής τιμής. Ένα φόρεμα κόστιζε 90 €. Υπολόγισε την έκπτωση και την τελική τιμή.",
+        "math_solution": "Η έκπτωση είναι τα 2/5 του 90, δηλαδή (90/5)*2 = 18*2 = 36 ευρώ. Η τελική τιμή είναι 90 - 36 = 54 ευρώ.",
+        "python_solution": "ekptwsi = Fraction(2,5) * 90\nteliki_timi = 90 - ekptwsi",
+        "notes": "Τα προβλήματα ποσοστών και μερών της μονάδας λύνονται πολλαπλασιάζοντας το αρχικό ποσό με το αντίστοιχο Fraction.",
+        "subject": "fractions_quantities",
+        "mathematical_difficulty": 2,
+        "programming_difficulty": 1
+    },
+    {
+        "problem": "Να εξετάσετε αν τα κλάσματα 3/8 και 18/48 είναι ισοδύναμα.",
+        "math_solution": "Απλοποιούμε το 18/48 διαιρώντας αριθμητή και παρονομαστή με το 6 και προκύπτει 3/8. Άρα τα κλάσματα είναι ισοδύναμα.",
+        "python_solution": "Fraction(3,8) == Fraction(18,48)",
+        "notes": "Ο τελεστής ισότητας `==` συγκρίνει αυτόματα τα κλάσματα, αφού η κλάση Fraction τα ανάγει πρώτα στη βασική, απλοποιημένη τους μορφή.",
+        "subject": "equivalent_fractions",
+        "mathematical_difficulty": 1,
+        "programming_difficulty": 1
+    },
+    {
+        "problem": "Το συνεργείο του Δήμου φύτεψε σε μια μέρα τα 4/12 μιας πλατείας. Την επόμενη φύτεψε τα 3/12. Ποιο τμήμα της πλατείας φυτεύτηκε συνολικά;",
+        "math_solution": "Επειδή τα κλάσματα είναι ομώνυμα, προσθέτουμε τους αριθμητές: 4/12 + 3/12 = 7/12.",
+        "python_solution": "Fraction(4,12) + Fraction(3,12)",
+        "notes": "Η Python βρίσκει το ΕΚΠ αν τα κλάσματα είναι ετερώνυμα και επιστρέφει το αποτέλεσμα απλοποιημένο. Εδώ επιστρέφει Fraction(7, 12).",
+        "subject": "fraction_addition",
+        "mathematical_difficulty": 1,
+        "programming_difficulty": 1
+    },
+    {
+        "problem": "Σύγκρινε τα κλάσματα 4/5 και 8/12.",
+        "math_solution": "Κάνουμε ομώνυμα με ΕΚΠ το 15: Το 4/5 γίνεται 12/15 και το 8/12 (απλοποιείται σε 2/3) γίνεται 10/15. Επειδή 12 > 10, το 4/5 είναι μεγαλύτερο.",
+        "python_solution": "Fraction(4,5) > Fraction(8,12)",
+        "notes": "Οι τελεστές σύγκρισης (<, >) λειτουργούν φυσιολογικά μεταξύ αντικειμένων τύπου Fraction, αγνοώντας την ανάγκη χειροκίνητης εύρεσης ομώνυμων.",
+        "subject": "fraction_comparison",
+        "mathematical_difficulty": 2,
+        "programming_difficulty": 1
+    },
+    {
+        "problem": "Βάλε σε αύξουσα σειρά τα κλάσματα 3/5, 8/15, 5/10, 20/15, 7/5.",
+        "math_solution": "Κάνουμε όλα τα κλάσματα ομώνυμα (ΕΚΠ=30): 18/30, 16/30, 15/30, 40/30, 42/30. Η σωστή σειρά είναι 5/10, 8/15, 3/5, 20/15, 7/5.",
+        "python_solution": "lista = [Fraction(3,5), Fraction(8,15), Fraction(5,10), Fraction(20,15), Fraction(7,5)]\nsorted(lista)",
+        "notes": "Η συνάρτηση `sorted()` ταξινομεί σωστά μια λίστα που περιέχει Fractions, χρησιμοποιώντας την εσωτερική αλγεβρική λογική της κλάσης.",
+        "subject": "fraction_sorting",
+        "mathematical_difficulty": 3,
+        "programming_difficulty": 2
+    },
+    {
+        "problem": "Σε ένα σχολείο με 252 μαθητές τα 5/9 είναι αγόρια. Πόσα είναι τα αγόρια και πόσα είναι τα κορίτσια;",
+        "math_solution": "Τα αγόρια είναι (252 / 9) * 5 = 28 * 5 = 140. Τα κορίτσια είναι οι υπόλοιποι μαθητές, δηλαδή 252 - 140 = 112.",
+        "python_solution": "agoria = 252 * Fraction(5,9)\nkoritsia = 252 - agoria",
+        "notes": "Η Python επιτρέπει πολλαπλασιασμό (Fraction * int) και αφαίρεση (int - Fraction) δίνοντας απευθείας το σωστό αποτέλεσμα.",
+        "subject": "fraction_multiplication",
+        "mathematical_difficulty": 2,
+        "programming_difficulty": 1
+    },
+    {
+        "problem": "Υπολόγισε το γινόμενο των μεικτών κλασμάτων (4 και 1/5) * (2 και 1/2).",
+        "math_solution": "Μετατρέπουμε τα μεικτά σε απλά: (21/5) * (5/2) = (21*5)/(5*2) = 105/10 = 21/2.",
+        "python_solution": "(4 + Fraction(1,5)) * (2 + Fraction(1,2))",
+        "notes": "Τα μεικτά κλάσματα στην Python γράφονται ως το άθροισμα ενός ακεραίου και ενός Fraction. Οι παρενθέσεις είναι απαραίτητες για τη σωστή προτεραιότητα πράξεων.",
+        "subject": "mixed_fractions",
+        "mathematical_difficulty": 2,
+        "programming_difficulty": 2
+    },
+    {
+        "problem": "Να βρεις τον αντίστροφο των αριθμών 4/7 και 72.",
+        "math_solution": "Ο αντίστροφος του 4/7 είναι 7/4. Ο αντίστροφος του ακεραίου 72 (δηλαδή 72/1) είναι το 1/72.",
+        "python_solution": "print(1 / Fraction(4,7))\nprint(1 / Fraction(72))",
+        "notes": "Ο αντίστροφος υπολογίζεται διαιρώντας τη μονάδα (1) με το Fraction. Η Python αναστρέφει αυτόματα τον αριθμητή με τον παρονομαστή.",
+        "subject": "fraction_reciprocal",
+        "mathematical_difficulty": 1,
+        "programming_difficulty": 1
+    }
+]

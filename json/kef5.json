@@ -1,0 +1,56 @@
+[
+    {
+        "problem": "Γράψε συντομότερα τις εκφράσεις: (α) x + x + x + x, (γ) 3*α + 5*α",
+        "math_solution": "Προσθέτουμε τους συντελεστές των όμοιων όρων: x + x + x + x = 4x. Ομοίως, 3α + 5α = 8α.",
+        "python_solution": "from sympy import symbols\nx, a = symbols('x a')\nprint(x + x + x + x)\nprint(3*a + 5*a)",
+        "notes": "Η βιβλιοθήκη Sympy χειρίζεται σύμβολα και κάνει αυτόματα αλγεβρικές απλοποιήσεις μέσω της δήλωσης μεταβλητών με τη συνάρτηση symbols().",
+        "subject": "sympy_intro",
+        "mathematical_difficulty": 1,
+        "programming_difficulty": 1
+    },
+    {
+        "problem": "Να εξετάσεις αν ο αριθμός 12 είναι λύση της εξίσωσης: x + 13 = 25",
+        "math_solution": "Αντικαθιστούμε το x με το 12 και βρίσκουμε 12 + 13 = 25. Επομένως το 12 επαληθεύει την εξίσωση.",
+        "python_solution": "from sympy import symbols\nx = symbols('x')\ne = x + 13\nprint(e.subs(x, 12) == 25)",
+        "notes": "Η μέθοδος .subs(μεταβλητή, τιμή) αντικαθιστά ένα σύμβολο με μια συγκεκριμένη αριθμητική τιμή σε μια μαθηματική έκφραση.",
+        "subject": "equation_verification",
+        "mathematical_difficulty": 1,
+        "programming_difficulty": 1
+    },
+    {
+        "problem": "Να λυθούν οι εξισώσεις: x + 5 = 12, y - 2 = 3, w / 5 = 4",
+        "math_solution": "Λύνοντας τις εξισώσεις έχουμε: x = 12 - 5 = 7, y = 3 + 2 = 5, w = 4 * 5 = 20.",
+        "python_solution": "from sympy import solve, symbols\nx, y, w = symbols('x y w')\nprint(solve(x + 5 - 12))\nprint(solve(y - 2 - 3))\nprint(solve(w / 5 - 4))",
+        "notes": "Η συνάρτηση solve βρίσκει τις ρίζες μιας έκφρασης θεωρώντας ότι αυτή ισούται με 0. Γι' αυτό το 'x+5=12' γράφεται ως 'x+5-12'.",
+        "subject": "equation_solving",
+        "mathematical_difficulty": 1,
+        "programming_difficulty": 2
+    },
+    {
+        "problem": "Μια δεξαμενή χωρητικότητας 6 m^3 που έχει μήκος 1,5m και πλάτος 2m, έχει ύψος (α) 1,5m ή (β) 3m ή (γ) 2m;",
+        "math_solution": "Ο όγκος ισούται με Μήκος * Πλάτος * Ύψος. Άρα 1,5 * 2 * Υ = 6 => 3 * Υ = 6 => Υ = 2m.",
+        "python_solution": "from sympy import solve, symbols\nx = symbols('x')\nprint(solve(2 * 1.5 * x - 6))",
+        "notes": "Το πρόβλημα διαμορφώνεται εύκολα ως εξίσωση ενός αγνώστου (x) και λύνεται άμεσα με την solve().",
+        "subject": "word_problems",
+        "mathematical_difficulty": 2,
+        "programming_difficulty": 2
+    },
+    {
+        "problem": "Στην εξίσωση 2 + α = x, το α και το x είναι φυσικοί αριθμοί. Ποια από τις τιμές 0, 3, 1 μπορεί να πάρει το x;",
+        "math_solution": "Αν x=0 τότε 2+α=0 => α=-2. Αν x=1 τότε 2+α=1 => α=-1. Αν x=3 τότε 2+α=3 => α=1 (φυσικός). Άρα το x είναι 3.",
+        "python_solution": "from sympy import solve, symbols\na = symbols('a')\nprint(solve(2 + a - 0))\nprint(solve(2 + a - 3))\nprint(solve(2 + a - 1))",
+        "notes": "Ελέγχουμε κάθε πιθανή τιμή του x λύνοντας την εξίσωση ως προς τη μεταβλητή a. Παρατηρούμε το output για να δούμε πότε προκύπτει θετικός ακέραιος.",
+        "subject": "logic_equations",
+        "mathematical_difficulty": 2,
+        "programming_difficulty": 2
+    },
+    {
+        "problem": "Τοποθέτησε ένα 'Χ' στη θέση εκείνη που ο αριθμός επαληθεύει την εξίσωση x - 2 = 4 για τις τιμές x από 0 έως 8.",
+        "math_solution": "Ο μοναδικός αριθμός που επαληθεύει την εξίσωση είναι ο 6, αφού 6 - 2 = 4. Για τους υπόλοιπους το αποτέλεσμα δεν ισούται με 4.",
+        "python_solution": "from sympy import symbols\nx = symbols('x')\nfor i in range(9):\n    if (x - 2).subs(x, i) == 4:\n        print('X', end='')\n    else:\n        print('O', end='')",
+        "notes": "Συνδυασμός δομής επανάληψης for και ελέγχου if μαζί με την subs του sympy για αυτοματοποιημένη δοκιμή και επαλήθευση πολλαπλών τιμών.",
+        "subject": "loop_verification",
+        "mathematical_difficulty": 1,
+        "programming_difficulty": 3
+    }
+]

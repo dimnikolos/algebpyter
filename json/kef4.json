@@ -1,0 +1,56 @@
+[
+    {
+        "problem": "Γράψε το κλάσμα 7/16 ως δεκαδικό αριθμό: (i) με προσέγγιση εκατοστού και (ii) με προσέγγιση χιλιοστού.",
+        "math_solution": "Η διαίρεση 7:16 μας δίνει 0.4375. Με προσέγγιση εκατοστού γίνεται 0.44 και με προσέγγιση χιλιοστού 0.438.",
+        "python_solution": "x = 7 / 16\nprint(round(x, 2))\nprint(round(x, 3))",
+        "notes": "Η συνάρτηση `round(number, ndigits)` χρησιμοποιείται στην Python για την στρογγυλοποίηση δεκαδικών αριθμών στα επιθυμητά ψηφία.",
+        "subject": "rounding",
+        "mathematical_difficulty": 1,
+        "programming_difficulty": 1
+    },
+    {
+        "problem": "Στον αριθμό 34,___ λείπουν τρία ψηφία. Συμπλήρωσε με τα ψηφία 9, 5, 2 (μία φορά το καθένα) και διάταξε τους πιθανούς αριθμούς σε φθίνουσα σειρά.",
+        "math_solution": "Οι πιθανοί συνδυασμοί των δεκαδικών ψηφίων είναι 952, 925, 592, 529, 295, 259. Σε φθίνουσα σειρά: 34.952, 34.925, 34.592, 34.529, 34.295, 34.259.",
+        "python_solution": "from itertools import permutations\nlista = [round(34 + p[0]/10 + p[1]/100 + p[2]/1000, 3) for p in permutations([9,5,2])]\nprint(sorted(lista, reverse=True))",
+        "notes": "Η συνάρτηση `permutations` της `itertools` δημιουργεί όλες τις αναδιατάξεις στοιχείων. Η `sorted` με `reverse=True` κάνει τη φθίνουσα ταξινόμηση.",
+        "subject": "permutations",
+        "mathematical_difficulty": 2,
+        "programming_difficulty": 3
+    },
+    {
+        "problem": "Υπολόγισε την πράξη: 4,91 * 0,01 + 0,819 * 10. Είναι το αποτέλεσμα ακριβώς 8,2391;",
+        "math_solution": "4,91 * 0,01 = 0,0491. 0,819 * 10 = 8,19. Το άθροισμα είναι ακριβώς 0,0491 + 8,19 = 8,2391.",
+        "python_solution": "4.91 * 0.01 + 0.819 * 10 == 8.2391",
+        "notes": "Η παραπάνω εντολή επιστρέφει False. Λόγω του τρόπου αποθήκευσης των floats, η Python δίνει το προσεγγιστικό αποτέλεσμα 8.239099999999999.",
+        "subject": "float_precision",
+        "mathematical_difficulty": 2,
+        "programming_difficulty": 2
+    },
+    {
+        "problem": "Να γράψεις τον αριθμό 3.420.000.000 στην τυποποιημένη (εκθετική) μορφή.",
+        "math_solution": "Μετακινούμε την υποδιαστολή 9 θέσεις αριστερά. Ο αριθμός γράφεται ως 3,42 * 10^9.",
+        "python_solution": "print('{:.2e}'.format(3420000000))",
+        "notes": "Το format `'{:.2e}'` μετατρέπει τον αριθμό σε scientific notation με 2 δεκαδικά ψηφία. Θα τυπώσει '3.42e+09'.",
+        "subject": "scientific_notation",
+        "mathematical_difficulty": 2,
+        "programming_difficulty": 2
+    },
+    {
+        "problem": "Η επιφάνεια ενός κύβου έχει εμβαδόν 96 cm^2. Να βρεθεί ο όγκος του.",
+        "math_solution": "Ο κύβος έχει 6 έδρες, άρα κάθε έδρα έχει εμβαδόν 96:6 = 16 cm^2. Η ακμή του κύβου είναι η τετραγωνική ρίζα του 16, δηλαδή 4 cm. Ο όγκος είναι 4^3 = 64 cm^3.",
+        "python_solution": "import math\nakmi = math.sqrt(96 / 6)\nogkos = akmi ** 3\nprint(ogkos)",
+        "notes": "Η τετραγωνική ρίζα (square root) υπολογίζεται μέσω της συνάρτησης `sqrt` από την ενσωματωμένη βιβλιοθήκη `math`.",
+        "subject": "geometry",
+        "mathematical_difficulty": 2,
+        "programming_difficulty": 1
+    },
+    {
+        "problem": "Μια αμαξοστοιχία ξεκινά από την Αθήνα στις 9:10 το πρωί. Το ταξίδι διαρκεί 4 ώρες και 57 λεπτά. Ποια ώρα θα φτάσει στον προορισμό της;",
+        "math_solution": "Προσθέτουμε 4 ώρες στις 9:10 και πάμε στις 13:10. Προσθέτουμε 57 λεπτά: 10+57=67 λεπτά, δηλαδή 1 ώρα και 7 λεπτά. Άρα η τελική ώρα είναι 14:07.",
+        "python_solution": "import datetime\nt = datetime.datetime(2020, 1, 1, 9, 10)\nd = datetime.timedelta(hours=4, minutes=57)\nprint((t + d).strftime('%H:%M'))",
+        "notes": "Η χρήση των αντικειμένων `datetime` και `timedelta` της Python επιλύει αυτόματα τον πολύπλοκο χειρισμό των ορίων στα λεπτά (modulo 60) και τις ώρες (modulo 24).",
+        "subject": "time_arithmetic",
+        "mathematical_difficulty": 2,
+        "programming_difficulty": 3
+    }
+]
